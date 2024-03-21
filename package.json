@@ -1,0 +1,84 @@
+{
+  "name": "quaeratrerum",
+  "version": "1.0.0",
+  "description": "Additional types for typescript",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HayleyKunze/quaeratrerum.git"
+  },
+  "keywords": [
+    "typescript",
+    "sed",
+    "vel"
+  ],
+  "author": "ConradProsacco",
+  "license": "MIT",
+  "homepage": "https://github.com/HayleyKunze/quaeratrerum.git",
+  "devDependencies": {
+    "@types/jest": "^27.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^4.29.2",
+    "eslint": "^7.32.0",
+    "jest": "^27.0.6",
+    "jest-html-reporters": "^2.1.6",
+    "jest-junit": "^12.2.0",
+    "ts-jest": "^27.0.5",
+    "typescript": "^4.3.5"
+  },
+  "jest": {
+    "testMatch": [
+      "<rootDir>/tests/code/**/*.test.ts"
+    ],
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*.{ts,js}"
+    ],
+    "coverageReporters": [
+      "html",
+      "text",
+      "cobertura"
+    ],
+    "coverageDirectory": "<rootDir>/tests/reports/coverage",
+    "reporters": [
+      "default",
+      [
+        "jest-junit",
+        {
+          "suiteName": "jest tests",
+          "outputDirectory": "./tests/reports/result",
+          "outputName": "junit.xml",
+          "classNameTemplate": "{classname}",
+          "titleTemplate": "{title}",
+          "ancestorSeparator": " › "
+        }
+      ],
+      [
+        "jest-html-reporters",
+        {
+          "publicPath": "./tests/reports/result",
+          "filename": "overview.html"
+        }
+      ]
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/$1",
+      "^~/(.*)$": "<rootDir>/$1"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ],
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "resetMocks": true,
+    "restoreMocks": true
+  }
+}
